@@ -1,0 +1,18 @@
+.btn{
+    border: 0;
+    border-radius: 0;
+    height: inherit;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+
+.btn-primary{
+    background: $sec-color;
+    text-transform: uppercase;
+    line-height: 33px;
+    &:hover{
+        background: darken($sec-color, 10%);
+    }
+}

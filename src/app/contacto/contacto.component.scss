@@ -1,0 +1,49 @@
+@import '../../assets/scss/variables';
+
+:host
+    agm-map{
+        height: 450px;
+    }
+
+    .map-window-info{
+        width: 400px;
+        height: 150px;
+        background: $main-color;
+        position: absolute;
+        right: 200px;
+        top: 15%;
+        overflow: hidden;
+        padding: 15px;
+        h2{
+            font-size: 15px;
+            margin: 0;
+            line-height: 30px;
+        }
+        p{
+            margin-left: 20px;
+            font-size: 13px;
+        }
+    }
+
+    .contact-us{
+        background: $base-dark-color;
+        color: $base-light-color;
+        padding-bottom: 20px;
+        h2{
+            font-weight: lighter;
+        }
+        form{
+            margin-bottom: 15px;
+            label{
+                font-weight: lighter;
+            }
+            input, textarea{
+                border-radius: 0;
+                border: 0;
+                margin-bottom: 15px;
+            }
+            textarea{
+                min-height: 108px;
+            }
+        }
+    }

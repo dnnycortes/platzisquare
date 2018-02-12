@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { LugaresComponent } from './lugares/lugares.component';
@@ -24,11 +24,11 @@ const appRoutes: Routes = [
 @NgModule({
 	declarations: [
 		AppComponent,
-		ResaltarDirective,
-		ContarClicksDirective,
 		DetalleComponent,
 		LugaresComponent,
-		ContactoComponent
+		ContactoComponent,
+		ResaltarDirective,
+		ContarClicksDirective,
 	],
 	imports: [
 		BrowserModule,

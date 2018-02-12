@@ -1,15 +1,36 @@
-<div class="well">
-	<a routerLink="/lugares">Lugares</a> Contacto
+<agm-map [latitude]="19.4212736" [longitude]="-99.1492503" [zoom]="zoom" [fullscreenControl]="true" >
+	<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+<div class="map-window-info">
+	<div class="row">
+		<div class="col-md-6">
+			<h2><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Dirección</h2>
+			<p>Córdoba 56, <br> Col. Roma Norte <br> C.P. 06700</p>
+		</div>
+		<div class="col-md-6">
+			<h2><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</h2>
+			<p>diseno@emergente.com</p>
+		</div>
+	</div>
 </div>
 
-<div class="container">
-	<label for="">Nombre</label>
-	<input type="text" class="form-control">
-	<label for="">Correo</label>
-	<input type="email" class="form-control">
-	<label for="">Mensaje</label>
-	<textarea class="form-control"></textarea>
-	<hr>
-	<a href="" class="btn btn-primary">Enviar</a>
-	<a href="" class="btn btn-default">Cancelar</a>
-</div>
+<div class="contact-us">
+	<div class="container">
+		<h2>Contáctanos</h2>
+		<form class="row">
+			<div class="col-md-6">
+				<label for="">Nombre</label>
+				<input type="text" class="form-control">
+				<label for="">Correo</label>
+				<input type="email" class="form-control">
+			</div>
+			<div class="col-md-6">
+				<label for="">Mensaje</label>
+				<textarea class="form-control"></textarea>
+			</div>
+		</form>
+		<a href="" class="btn btn-primary">Enviar</a>
+	</div>	
+</div><!-- .contact-us -->
+

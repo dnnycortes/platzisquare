@@ -1,0 +1,29 @@
+@import '../assets/scss/variables';
+
+:host
+    nav{
+        background-color: $main-color;
+        border-radius: 0;
+        border:0;
+        margin: 0;
+        .navbar-brand{
+            color: $base-dark-color;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+        ul{
+            > li{
+                > a{
+                    color: $base-dark-color;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+            }
+            .active{
+                a{
+                    background: none;
+                    color: $sec-color;
+                }
+            }
+        }
+    }
