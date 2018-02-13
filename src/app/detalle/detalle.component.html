@@ -1,9 +1,18 @@
-<div class="well">
-    <a routerLink="/lugares">Lugares</a> / {{ lugar.nombre }}
-</div>
+<div class="cover">
+    <div class="breadcrumb">
+        <a routerLink="/lugares">Lugares</a> / {{ lugar.nombre }}
+    </div><!-- .breadcrumb -->
 
-<div class="container">
+    <div class="picture">
+        <img [src]="lugar.img" alt="">
+    </div>
     <h1>{{ lugar.nombre }}</h1>
+</div><!-- .cover -->
+
+
+
+<div class="container shop-detail">
+    <h1>Detalles</h1>
     <hr>
     <small>{{ lugar.distancia }}</small>
     <br>

@@ -1,0 +1,43 @@
+@import '../../assets/scss/variables';
+
+:host
+    .cover{
+        background: $base-dark-color;
+        width: 100%;
+        min-height: 250px;
+        position: relative;
+        .breadcrumb{
+            background: inherit;
+            color: $base-light-color;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 13px;
+            a{
+                color: $sec-color;
+            }
+        }
+        .picture{
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 9.5%;
+            img{
+               border-radius: 50%; 
+            }
+        }
+        h1{
+            color: $main-color;
+            position: absolute;
+            bottom: 10%;
+            left: 25%;
+            font-weight: lighter;
+        }
+    }
+    .shop-detail{
+        margin-top: 80px;
+        h1{
+            font-weight: lighter;
+            font-size: 25px;
+        }
+    }
