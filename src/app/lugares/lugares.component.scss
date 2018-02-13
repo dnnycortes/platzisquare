@@ -1,0 +1,34 @@
+@import '../../assets/scss/variables';
+
+:host
+  
+    h2{
+        font-weight: lighter;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        a{
+            color: $sec-color;
+            text-decoration: none;
+            &:hover{
+                color: darken($sec-color, 20%);
+            }
+        }
+        li{
+            text-align: center;
+        }
+    }
+    .picture{
+        width: 120px;
+        height: 120px;
+        background: $sec-color;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        img{
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
