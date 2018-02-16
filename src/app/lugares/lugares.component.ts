@@ -16,6 +16,10 @@ export class LugaresComponent {
 	constructor(
 		private lugaresService: LugaresService
 	) {
-		this.lugares = lugaresService.getLugares();
+		lugaresService.getLugares()
+			.valueChanges()
+			.subscribe( (lugares) => {
+				this.lugares = lugares;
+			} );
 	}
 }

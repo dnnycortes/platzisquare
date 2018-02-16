@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 
@@ -12,12 +14,28 @@ export class LugaresService {
 		{ id: 6, plan: 'pagado', cercania: 3, distancia: 125, active: true, nombre: 'Estudio láser', img:'../../assets/img/tienda-estudio-corte-laser.png' }
 	];
 
+	constructor(
+		private afDB: AngularFireDatabase,
+		private http: Http
+	) {}
+
 	public getLugares() {
-		return this.lugares;
+		return this.afDB.list('lugares/');
 	}
 
-	public buscarLugar( id ){
+	public buscarLugar( id ) {
 		//return this.lugares.filter( (lugar) => { return lugar.id == id } )[0] || null;
 		return this.lugares.find( (lugar) => { return lugar.id == id } ) || null;
+	}
+
+	public guardarLugar ( lugar ) {
+		console.log( lugar );
+		this.afDB.database.ref('lugares/' + lugar.id).set( lugar );
+	}
+
+	public obtenerGeoData ( direccion ) {
+		//http://maps.google.com/maps/api/geocode/xml?address=
+		return this.http.get( 'http://maps.google.com/maps/api/geocode/json?address=' + direccion );
+
 	}
 }

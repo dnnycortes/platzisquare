@@ -1,0 +1,32 @@
+@import '../../assets/scss/variables';
+
+:host
+    .contact-us{
+        padding-bottom: 20px;
+        h2{
+            font-weight: lighter;
+            font-size: 22px;
+        }
+        form{
+            margin-bottom: 15px;
+            label{
+                font-weight: normal;
+            }
+            input[type="number"], input[type="text"], textarea{
+                border-radius: 0;
+                border: 2px solid darken($base-medium-color, 10%);
+                margin-bottom: 15px;
+                box-shadow: inherit;
+            }
+            textarea{
+                min-height: 108px;
+                resize: none;
+            }
+            .picture{
+                margin-bottom: 15px;
+                img{
+                    border-radius: 50%;
+                }
+            }
+        }
+    }

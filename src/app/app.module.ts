@@ -12,16 +12,19 @@ import { AppComponent } from './app.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CrearLugarComponent } from './crear-lugar/crear-lugar.component';
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { LugaresService } from './services/lugares.service';
+import { HttpModule } from '@angular/http';
 
 
 const appRoutes: Routes = [
 	{ path: '', component: LugaresComponent  },
 	{ path: 'lugares', component: LugaresComponent },
 	{ path: 'detalle/:id', component: DetalleComponent },
-	{ path: 'contacto', component: ContactoComponent }
+	{ path: 'contacto', component: ContactoComponent },
+	{ path: 'crear-lugar', component: CrearLugarComponent }
 ];
 
 export const firebaseConfig = {
@@ -39,6 +42,7 @@ export const firebaseConfig = {
 		DetalleComponent,
 		LugaresComponent,
 		ContactoComponent,
+		CrearLugarComponent,
 		ResaltarDirective,
 		ContarClicksDirective,
 	],
@@ -51,7 +55,8 @@ export const firebaseConfig = {
 		RouterModule.forRoot( appRoutes ),
 		AngularFireModule.initializeApp(firebaseConfig),
 		AngularFireDatabaseModule,
-		AngularFireAuthModule
+		AngularFireAuthModule,
+		HttpModule
 	],
 	providers: [
 		LugaresService

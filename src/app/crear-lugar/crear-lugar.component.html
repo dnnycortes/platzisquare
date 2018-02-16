@@ -1,0 +1,36 @@
+<div class="contact-us">
+	<div class="container">
+		<h2>Agregar un nuevo producto</h2>
+		<form class="row">
+			<div class="picture col-md-4">
+				<img [src]="imagen" alt="">
+				<input type="file"  accept="image/*" name="imagen" (change)="obtenerImagen($event)">
+			</div>
+			<div class="col-md-8">
+				<label for="">Nombre</label>
+				<input type="text" class="form-control" [(ngModel)]="lugar.nombre" name="nombre">
+				<label for="">Descripción</label>
+				<textarea class="form-control" [(ngModel)]="lugar.descripcion" name="descripcion"></textarea>
+			</div>
+
+			<div class="col-md-12">
+				<label for="">Distancia</label>
+				<input type="number" class="form-control" [(ngModel)]="lugar.distancia"  name="distancia">
+				<label for="">Cercanía</label>
+				<input type="number" class="form-control" [(ngModel)]="lugar.cercania" name="cercania">
+				<label for="">Plan</label>
+				<input type="text" class="form-control" [(ngModel)]="lugar.plan" name="plan">
+				<h3>Datos de Dirección</h3>
+				<label for="">Calle y número</label>
+				<input type="text" class="form-control" [(ngModel)]="lugar.calle" name="plan">
+				<label for="">Ciudad</label>
+				<input type="text" class="form-control" [(ngModel)]="lugar.ciudad" name="plan">
+				<label for="">País</label>
+				<input type="text" class="form-control" [(ngModel)]="lugar.pais" name="plan">
+			</div>
+		</form>
+		<a class="btn btn-primary" (click)="guardarLugar()">Enviar</a>
+	</div>	
+</div><!-- .contact-us -->
+
+  

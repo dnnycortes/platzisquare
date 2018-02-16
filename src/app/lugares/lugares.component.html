@@ -5,7 +5,7 @@
 			<ul>
 				<ng-container *ngFor="let lugar of lugares">
 					<a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action:'edit'}">
-						<li *ngIf="lugar.active">
+						<li>
 							<div class="picture">
 								<img [src]="lugar.img" alt="">
 							</div>
@@ -20,6 +20,7 @@
 		</div>
 		
 	</div>
+	<a routerLink="/crear-lugar" class="btn btn-primary"> Crear nuevo negocio </a>
 </div>
 
 <!--<ul>
