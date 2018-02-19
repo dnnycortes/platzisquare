@@ -1,16 +1,22 @@
 <div class="contact-us">
 	<div class="container">
-		<h2>Agregar un nuevo producto</h2>
+		<h2>Agregar un nuevo espacio emergente</h2>
 		<form class="row">
-			<div class="picture col-md-4">
-				<img [src]="imagen" alt="">
-				<input type="file"  accept="image/*" name="imagen" (change)="obtenerImagen($event)">
-			</div>
-			<div class="col-md-8">
+			<div class="col-md-9">
+				<h3>Datos básicos</h3>
 				<label for="">Nombre</label>
 				<input type="text" class="form-control" [(ngModel)]="lugar.nombre" name="nombre">
 				<label for="">Descripción</label>
 				<textarea class="form-control" [(ngModel)]="lugar.descripcion" name="descripcion"></textarea>
+			</div>
+
+			<div class="picture col-md-3">
+				<img [src]="imagen" alt="">
+				<label class="fileUploader">
+					<span class="glyphicon glyphicon-upload"></span>
+					Cargar imagen
+					<input type="file"  accept="image/*" name="imagen" (change)="cargarImagen($event)">
+				</label>
 			</div>
 
 			<div class="col-md-12">

@@ -13,15 +13,18 @@ export class CrearLugarComponent implements OnInit {
 	lugar: any = {};
 	imagen: String = '../../assets/img/default.png';
 
+
 	constructor(
 		private lugaresService: LugaresService,
 	) { }
 
+
 	ngOnInit() {
 	}
 
+
 	guardarLugar() {
-		let direccion = this.lugar.calle + ',' + this.lugar.ciudad + ',' + this.lugar.pais;
+		const direccion = this.lugar.calle + ',' + this.lugar.ciudad + ',' + this.lugar.pais;
 		this.lugaresService.obtenerGeoData( direccion )
 			.subscribe( ( result ) => {
 				this.lugar.lat = result.json().results[0].geometry.location.lat;
@@ -33,7 +36,8 @@ export class CrearLugarComponent implements OnInit {
 			});
 	}
 
-	obtenerImagen( event: any ) {
+
+	cargarImagen( event: any ) {
 		const archivo = event.srcElement.files;
 		this.lugar.imagen = archivo[0].name;
 
@@ -46,7 +50,4 @@ export class CrearLugarComponent implements OnInit {
 			reader.readAsDataURL( event.target.files[0] );
 		}
 	}
-
-
-
 }
