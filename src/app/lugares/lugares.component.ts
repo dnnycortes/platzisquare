@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
 
 
@@ -9,17 +9,23 @@ import { LugaresService } from '../services/lugares.service';
 })
 
 
-export class LugaresComponent {
+export class LugaresComponent implements OnInit {
 	title = 'PlatziSquare';
 	lugares = null;
 
 	constructor(
 		private lugaresService: LugaresService
-	) {
-		lugaresService.getLugares()
+	) {}
+
+	ngOnInit(): void {
+		this.lugaresService.getLugares()
 			.valueChanges()
 			.subscribe( (lugares) => {
 				this.lugares = lugares;
+				console.log( this.lugares );
+				for ( const index in this.lugares ) {
+					this.lugares[index].imagen = '../assets/img/' + this.lugares[index].imagen;
+				}
 			} );
 	}
 }

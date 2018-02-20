@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container lugares">
 	<div class="row">
 		<div class="col-md-8">
 			<h2>Lugares cercanos</h2>
@@ -7,7 +7,7 @@
 					<a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action:'edit'}">
 						<li>
 							<div class="picture">
-								<img [src]="lugar.img" alt="">
+								<img [src]="lugar.imagen" alt="">
 							</div>
 							{{ lugar.nombre }}
 						</li>
@@ -20,7 +20,7 @@
 		</div>
 		
 	</div>
-	<a routerLink="/crear-lugar" class="btn btn-primary"> Crear nuevo negocio </a>
+	<a routerLink="/crear-lugar" class="btn btn-primary btn-agregar"> <span class="glyphicon glyphicon-plus"></span></a>
 </div>
 
 <!--<ul>

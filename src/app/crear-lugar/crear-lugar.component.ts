@@ -33,6 +33,7 @@ export class CrearLugarComponent implements OnInit {
 				this.lugaresService.guardarLugar( this.lugar );
 				alert('Negocio guardado con éxito');
 				this.lugar = {};
+				this.imagen = '../../assets/img/default.png';
 			});
 	}
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LugaresService } from '../services/lugares.service';
 
@@ -11,20 +11,26 @@ import { LugaresService } from '../services/lugares.service';
 })
 
 
-export class DetalleComponent {
-
+export class DetalleComponent implements OnInit {
 	id = null;
 	lugar: any = [];
+
+
 	constructor(
 		private route: ActivatedRoute,
-		private lugaresService: LugaresService
+		private lugaresService: LugaresService,
 	) {
 		console.log( this.route.snapshot.queryParams['action']);
-
 		this.id = this.route.snapshot.params['id'];
-		this.lugar = this.lugaresService.buscarLugar( this.id );
+	}
 
-		console.log( this.id );
-		console.log( this.lugar );
+
+	ngOnInit(): void {
+		this.lugaresService.buscarLugar( this.id )
+			.valueChanges()
+			.subscribe( (lugar) => {
+				this.lugar = lugar;
+				console.log( this.lugar );
+			});
 	}
 }
