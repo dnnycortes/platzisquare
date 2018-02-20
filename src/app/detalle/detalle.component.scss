@@ -1,6 +1,10 @@
 @import '../../assets/scss/variables';
 
 :host
+    agm-map{
+        margin-bottom: 20px;
+        height: 300px;
+    }
     .cover{
         background: $base-dark-color;
         width: 100%;
@@ -22,6 +26,7 @@
             position: absolute;
             top: 50%;
             left: 9.5%;
+            margin-right: 20px;
             img{
                border-radius: 50%; 
             }
@@ -36,8 +41,14 @@
     }
     .shop-detail{
         margin-top: 80px;
+        margin-bottom: 15px;
         h1{
             font-weight: lighter;
             font-size: 25px;
+        }
+        h2{
+            color: $sec-color;
+            text-transform: uppercase;
+            font-size: 14px;
         }
     }

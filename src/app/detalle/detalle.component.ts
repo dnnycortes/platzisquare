@@ -14,6 +14,7 @@ import { LugaresService } from '../services/lugares.service';
 export class DetalleComponent implements OnInit {
 	id = null;
 	lugar: any = [];
+	zoom: Number = 15;
 
 
 	constructor(
@@ -30,6 +31,7 @@ export class DetalleComponent implements OnInit {
 			.valueChanges()
 			.subscribe( (lugar) => {
 				this.lugar = lugar;
+				this.lugar.imagen = '../assets/img/' + this.lugar.imagen;
 				console.log( this.lugar );
 			});
 	}

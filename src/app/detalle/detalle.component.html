@@ -4,7 +4,7 @@
     </div><!-- .breadcrumb -->
 
     <div class="picture">
-        <!--<img [src]="lugar.img" alt="">-->
+        <img [src]="lugar.imagen" alt="">
     </div>
     <h1>{{ lugar.nombre }}</h1>
 </div><!-- .cover -->
@@ -17,7 +17,11 @@
     <small>{{ lugar.distancia }}</small>
     <br>
     <div class="well">
-        <p>{{ lugar.description }}</p>
+        <p>{{ lugar.descripcion }}</p>
         <b>{{ lugar.plan }}</b>
     </div>
+    <h2>Ubicación</h2>
+    <agm-map [latitude]="lugar.lat" [longitude]="lugar.lng" [zoom]="zoom" [fullscreenControl]="true" >
+        <agm-marker [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+    </agm-map>
 </div>
